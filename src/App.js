@@ -1,23 +1,9 @@
-import React from 'react';
-import { Grid } from "@material-ui/core";
-import Content from "./Content";
-import Header from "./Header";
+import React from "react";
+import CoolButton from "./CoolButton";
 
-function App() {
+export default function App() {
+  const cool = true;
   return (
-    <Grid container direction="column">
-      <Grid item>
-        <Header />
-      </Grid>
-      <Grid item container>
-        <Grid item xs={false} sm={2} />
-        <Grid item xs={12} sm={8}>
-          <Content />
-        </Grid>
-        <Grid item xs={false} sm={2} />
-      </Grid>
-    </Grid>
+    <CoolButton cool={cool} />
   );
 }
-
-export default App;

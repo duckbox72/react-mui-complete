@@ -27,7 +27,7 @@ const CoffeCard = (props) => {
             subheader={price}
           /> 
           <CardMedia
-            style={{ height: "150px", maxWidth: "150px", justifyContent: 'center'}}
+            style={{ height: "150px", maxWidth: "60%"}}
             image={imageUrl}          
           /> 
           <CardContent>
