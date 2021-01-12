@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Typography } from '@material-ui/core';
+import { Link, Typography } from '@material-ui/core';
 import mockData from './mockData';
 import { toFirstCharUppercase } from './constants'
 
@@ -24,6 +24,20 @@ const Pokemon = props => {
                     <img src={front_default} alt="..."/>
                 </Typography>
                 <img style={{ width: "300px", height: "300px" }} src={fullImageUrl} alt="..."/>
+                <Typography variant="h3">Pokemon Info</Typography>
+                <Typography>
+                    {"Species: "}
+                    <Link href={species.url}>{species.name}</Link>
+                </Typography>
+                <Typography >Height: {height}</Typography>
+                <Typography >Weight: {weight}</Typography>
+                <Typography variant="h6">Types: </Typography>
+                {types.map((typeInfo) => {
+                    const { type } = typeInfo;
+                    const { name } = type;
+                    return <Typography key={name}>{`${name}`}</Typography>
+                })}
+
             </>
         )
     }
