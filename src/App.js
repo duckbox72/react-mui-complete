@@ -1,16 +1,13 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
-import Pokedex from './Pokedex';
-import Pokemon from './Pokemon';
+import Home from './Home';
 
-
-export default function App() {
-  
+export default function App() {  
   return (
     <Switch>
-      <Route exact path="/" render={(props) => <Pokedex {...props} />} />
-      <Route path="/:pokemonId" render={(props) => <Pokemon {...props} />} />
+      <Redirect exact from="/home" to="/home/about" />
+      <Route exact path="/home/:page?" render={props => <Home {...props} />} />
     </Switch>
   );
 }
